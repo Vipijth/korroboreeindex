@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Korroboree</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:200' rel='stylesheet' type='text/css'>
+
+  <style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+.svg-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+	  margin: 0 auto;
+  width: 320px;  
+}
+.shape {
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 5px; /*Bottom line*/
+  fill: transparent;
+  stroke: #FF3C45;
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+  font-family: 'Raleway';
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+}
+
+button{
+  font-family: 'Raleway';
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+background: transparent;
+border:none;
+}
+button:focus{
+  outline: none;border:none;
+  cursor: pointer;
+}
+.svg-wrapper:hover .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+
+@media only screen and (max-width:990px) {
+  #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width:100%  !important; 
+ height:100%  !important; 
+}
+body{
+  background: #020414;
+
+}
+}
+
+  </style>
+</head>
+<body >
+<!-- partial:index.partial.html -->
+
+<video autoplay muted loop id="myVideo" onended="setTimeout(ends, 100)">
+    <source src="assets/videos/slider.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+<div class="svg-wrapper" style="position: fixed;top:50%;left:38%;cursor: pointer;" >
+  <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+    <rect class="shape" height="60" width="320" />
+    <div class="text" onClick="parent.location='main.html'" value='Enter Site' >
+    <center> <button>Enter Site</button></center> 
+    </div>
+  </svg>
+  
+</div>
+<!-- partial -->
+<script>
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("myBtn");
+    
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+    function ends(){
+    
+        window.location.href="main.html";
+    }
+    </script
+</body>
+</html>

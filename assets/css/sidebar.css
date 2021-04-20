@@ -1,0 +1,81 @@
+
+
+.containside {
+
+  position: fixed;
+  left:0;
+  width: 7em;
+  margin: 0 auto;
+  height: 100%;
+overflow:hidden;
+z-index: 33;
+}
+
+aside.sidenav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 3.25em;
+ 
+transform: translateZ(0px);
+}
+aside.sidenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.175em 0;
+  background: #3E4095;
+}
+aside.sidenav ul li {
+  position: relative;
+  display: block;
+  padding: 1em 1.175em;
+  background: #19232d;
+}
+aside.sidenav ul li svg {
+  fill: #cbd5df;
+  width: 1.35em;
+  height: 1.35em;
+  vertical-align: middle;
+  transition: opacity 0.3s ease;
+}
+aside.sidenav ul li span {
+  position: absolute;
+  z-index: -1;
+  font-size: 0.75em;
+  color: #434f5b;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+  top: 50%;
+  left: 100%;
+  background: white;
+  padding: 0.5em 1em;
+  display: block;
+  transform: translate(-100%, -50%);
+  transition: transform 0.3s ease-in-out;
+}
+aside.sidenav ul li span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border: 0.5em solid transparent;
+  border-right-color: white;
+  border-left: none;
+  transform: translate(0, -50%);
+  transition: transform 0.15s 0.3s ease-in-out;
+}
+aside.sidenav ul li:hover {
+  background: rgba(25, 35, 45, 0);
+  transition: background 0 0.3s;
+}
+aside.sidenav ul li:hover svg {
+  opacity: 0.8;
+}
+aside.sidenav ul li:hover span {
+  transform: translate(0, -50%);
+}
+aside.sidenav ul li:hover span::before {
+  transform: translate(-100%, -50%);
+}
